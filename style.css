@@ -702,31 +702,84 @@ ul.project-features-compact {
   margin-bottom: 0;
 }
 
-/* Responsive Architecture */
-@media (max-width: 768px) {
-  .blueprint-hero { min-height: auto; padding: 6rem 1.5rem; }
-  .blueprint-frame { padding: 4rem 1rem; }
+/* Responsive Architecture (Mobile-First / Fluid scaling downwards) */
+
+/* Small Laptop / Tablet Landscape (1025px - 1280px) */
+@media (max-width: 1280px) {
+  .blueprint-frame { padding: 4rem 2.5rem; }
+  .blueprint-name { font-size: clamp(2.5rem, 6vw, 4rem); }
+}
+
+/* Tablet Portrait (768px - 1024px) */
+@media (max-width: 1024px) {
+  .blueprint-hero { min-height: 70vh; }
+  .blueprint-frame { padding: 3rem 2rem; }
+  .blueprint-role { font-size: 1rem; letter-spacing: 0.3em; margin-bottom: 3rem; }
+  .blueprint-status-bar { flex-wrap: wrap; justify-content: center; }
+  .project-console { padding: 2.5rem !important; }
+  .edu-info { text-align: center; }
+}
+
+@media (max-width: 900px) {
+  #expertise .skills-masonry { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* Large/Standard Mobile (481px - 767px) */
+@media (max-width: 767px) {
+  .blueprint-hero { min-height: auto; padding: 5rem 1rem; }
+  .blueprint-frame { padding: 3rem 1.5rem; }
   .blueprint-name { font-size: 2.25rem; letter-spacing: 0.1em; }
-  .blueprint-role { font-size: 0.9rem; letter-spacing: 0.2em; margin-bottom: 2.5rem; }
-  .blueprint-status-bar { flex-direction: column; gap: 0.5rem; align-items: center; }
+  .blueprint-role { font-size: 0.85rem; letter-spacing: 0.15em; margin-bottom: 2rem; }
+  .blueprint-status-bar { flex-direction: column; gap: 0.5rem; align-items: stretch; }
   .status-pill { width: 100%; text-align: center; }
-  .blueprint-stack { font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 3.5rem; }
-  .blueprint-actions { flex-direction: column; width: 100%; gap: 1rem; }
-  .btn-blueprint { width: 100%; text-align: center; }
+  .blueprint-stack { font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 3rem; }
+  .blueprint-actions { flex-direction: column; width: 100%; gap: 1rem; box-sizing: border-box; }
+  .btn-blueprint { width: 100%; justify-content: center; padding: 1rem 1.5rem; }
   .corner { width: 15px; height: 15px; }
 
-  .section-title { font-size: 2rem; }
-  .glass-card { padding: 2rem; }
-  .blueprint-frame { padding: 4rem 1rem; }
-  .summary-content, .exp-header, .exp-tech-bar { padding: 0 1.5rem; }
-  .summary-stats { padding: 1.5rem !important; }
-  .blueprint-name-small { font-size: 1.5rem; }
+  .portfolio-container { padding: 0 1rem; }
+  .section-title { font-size: 1.75rem; margin-bottom: 2.5rem; }
+  .glass-card { padding: 1.5rem; }
   .skills-masonry { grid-template-columns: 1fr; gap: 1.25rem; }
+  .summary-content, .exp-header, .exp-tech-bar { padding: 0 1rem; }
+  .summary-stats { padding: 1.5rem !important; }
+  .blueprint-name-small { font-size: 1.15rem; word-wrap: break-word; }
+  .edu-info p { font-size: 0.75rem !important; }
   .project-console { padding: 1.5rem !important; }
-  .project-row { flex-direction: column; gap: 1.5rem; padding: 1.5rem; transform: none !important; }
-  .project-stats { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-right: 0; padding-bottom: 1.5rem; flex-direction: row; justify-content: flex-start; gap: 1rem; }
+  .project-row { flex-direction: column; gap: 1.25rem; padding: 1.25rem; transform: none !important; }
+  .project-stats { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-right: 0; padding-bottom: 1.25rem; flex-direction: row; justify-content: flex-start; gap: 1rem; }
   .project-id { margin-bottom: 0; }
   .project-icon-mini { font-size: 1.5rem; }
   .project-tech-line { font-size: 0.7rem; }
-  section { padding: 4rem 0; }
+  .project-features-compact li { font-size: 0.85rem; }
+  
+  .contact-icon-row { gap: 2.5rem; }
+  section { padding: 2.5rem 0; }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .portfolio-container { padding: 0 0.5rem; }
+  .blueprint-frame { padding: 2.5rem 0.5rem; width: 100%; overflow: hidden; box-sizing: border-box; }
+  .blueprint-name { font-size: clamp(1.4rem, 8vw, 1.7rem); letter-spacing: 0.02em; word-wrap: break-word; }
+  .btn-blueprint { padding: 0.8rem 1rem; font-size: 0.75rem; white-space: normal; letter-spacing: 0.05em; }
+  .status-pill { font-size: 0.65rem; padding: 0.4rem; }
+  .blueprint-stack { font-size: 0.7rem; letter-spacing: 0.05em; }
+  .section-title { font-size: 1.4rem; letter-spacing: 0.3em; margin-bottom: 1.5rem; }
+  section { padding: 2rem 0; }
+  
+  .glass-card { padding: 1.25rem; }
+  .blueprint-name-small { font-size: 1.05rem; word-wrap: break-word; }
+  .blueprint-list li { font-size: 0.85rem; padding-left: 1.5rem; }
+  .skill-pill { font-size: 0.8rem; padding: 0.4rem 1rem; }
+  
+  .project-console { padding: 1rem !important; }
+  .project-row { padding: 1rem; }
+  .edu-info { gap: 1rem !important; }
+  .edu-info p { font-size: 0.65rem !important; letter-spacing: 0.05em; line-height: 1.4; }
+  .contact-icon-row { gap: 1.5rem; flex-direction: column; }
+  .contact-circle svg { width: 3rem; height: 3rem; }
+  
+  .blueprint-meta { font-size: 0.55rem; letter-spacing: 0.1em; }
+  .footer-content { flex-direction: column; font-size: 0.65rem; letter-spacing: 0.05em; gap: 0.5rem; }
 }
